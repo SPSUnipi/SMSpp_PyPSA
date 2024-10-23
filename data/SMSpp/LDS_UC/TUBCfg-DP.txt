@@ -1,0 +1,50 @@
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# - - - - - - - - - - - - - - - - TUBCfg-DP.txt - - - - - - - - - - - - - - -
+#
+# A txt description of a BlockConfig for a ThermalUnitBlock that is being
+# solved by a ThermalUnitDPSolver. As such, no details corresponding to the
+# formulation (which one is chosen, if it includes P/Cs, the corresponding
+# separation tolerances) is relevant.
+#
+#   Antonio Frangioni, Donato Meoli
+#
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+BlockConfig # exact type of the ComputeConfig object
+
+1  # the BlockConfig is a "differential" one
+
+# static_constraints
+*    # [none]
+
+# dynamic_constraints
+SimpleConfiguration<std::pair<double,double>>
+1e-6    # threshold parameter for P/C separation
+1e-4    # tolerance value to consider a binary variable
+
+# static_variables
+SimpleConfiguration<int>
+11    # 3 = DP +8 = with Perspective Cuts
+
+# dynamic_variables
+*    # [none]
+
+# objective
+*    # [none]
+
+# is_feasible
+*    # [none]
+
+# is_optimal
+*    # [none]
+
+# solution
+*    # [none]
+
+# extra
+*    # [none]
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# - - - - - - - - - - - - - - - END TUBCfg-DP.txt - - - - - - - - - - - - - -
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -

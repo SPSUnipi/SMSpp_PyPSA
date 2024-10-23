@@ -1,0 +1,20 @@
+name: SMSpp_PyPSA_interface
+channels:
+  - conda-forge
+  - https://conda.anaconda.org/gurobi
+  - defaults
+dependencies:
+  - python
+  - numpy
+  - pandas
+  - matplotlib
+
+  # for the exercises on pypsa
+  - pypsa
+  - glpk
+  - gurobi  # not necessary but can ease the usability for some users
+
+  # for jupyter
+  - jupyter
+  - ipython
+  - ipykernel

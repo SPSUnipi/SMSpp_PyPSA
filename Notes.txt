@@ -1,0 +1,4 @@
+- InvestmentBlock documentation is not up to date
+- File Format is missing InvestmentBlock
+- Investment Solver in tools is not working
+- HydroBlock does not have marginal cost (Others may not too)

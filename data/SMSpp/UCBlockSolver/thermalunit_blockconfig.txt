@@ -1,0 +1,13 @@
+BlockConfig                 # The name of the configuration
+
+0                           # The configuration is not "differential"
+
+*                           # Static constraints configuration
+*                           # Dynamic constraints configuration
+SimpleConfiguration<int> 15 # Static variables configuration
+*                           # Dynamic variables configuration
+*                           # Objective configuration
+*                           # Feasibility configuration
+*                           # Optimality configuration
+*                           # Solution configuration
+*                           # Extra configuration
