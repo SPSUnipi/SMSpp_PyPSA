@@ -28,6 +28,7 @@ def build_data(
 
     n_days = int(df_pv.shape[0]/24)
 
+    np.random.seed(42)
     for i in bus_loads:
         df_demand_year = np.random.normal(
             np.tile(df_demand_day["demand"], n_days),
@@ -37,7 +38,7 @@ def build_data(
 
     # create hydro time serie
     df_hydro = pd.DataFrame(index=df_pv.index)
-    np.random.seed(42)
+    
     df_hydro["hydro"] = hydro_factor * df_demand.iloc[:, 0].mean() * np.maximum(
         0.0, np.random.normal(1., 1., df_pv.shape[0])
     )  # hydro power generation
@@ -163,7 +164,7 @@ def build_microgrid_model(
             carrier="AC",
             p_nom_extendable=True,
             capital_cost=assumptions.at["diesel", "capital_cost"],
-            marginal_cost=2*assumptions.at["diesel", "OPEX_marginal"],
+            marginal_cost=assumptions.at["diesel", "OPEX_marginal"],
         )
     return n
 
