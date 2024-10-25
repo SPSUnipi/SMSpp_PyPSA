@@ -196,8 +196,8 @@ def build_assumptions():
     assumptions.at["wind", "lifetime"] = 25  #20  # years
 
     # battery technology
-    assumptions.at["battery", "CAPEX"] = 450  # EUR/kWh
-    assumptions.at["battery", "OPEX_fixed"] = 3  # EUR/kWh/year
+    assumptions.at["battery", "CAPEX"] = 800  # EUR/kWh
+    assumptions.at["battery", "OPEX_fixed"] = 10  # EUR/kWh/year
     assumptions.at["battery", "efficiency"] = 0.9  # [-] per unit
     assumptions.at["battery", "lifetime"] = 10  # years
 
