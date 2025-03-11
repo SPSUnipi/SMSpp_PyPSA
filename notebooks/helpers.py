@@ -53,6 +53,8 @@ def build_microgrid_model(
     bus_storage = None, #0,
     bus_diesel = None, #2,
     bus_hydro = None, #1,
+    add_load_shedding = False,
+    load_shedding = 1000,
     x = 10.389754,
     y = 43.720810,
     hydro_factor = 0.1,
@@ -66,6 +68,8 @@ def build_microgrid_model(
     n_buses = max(all_buses) - min(all_buses) + 1
     df_data = build_data(bus_loads=buses_demand, hydro_factor=hydro_factor)
     assumptions = build_assumptions()
+
+    max_shedding = max(df_data[[f"demand {i}" for i in buses_demand]].sum(axis=1))
 
     # Create an empty PyPSA network
     n = pypsa.Network()
@@ -166,6 +170,19 @@ def build_microgrid_model(
             capital_cost=assumptions.at["diesel", "capital_cost"],
             marginal_cost=assumptions.at["diesel", "OPEX_marginal"],
         )
+    
+    # add load shedding
+    if add_load_shedding:
+        for bus in n.buses.index:
+            n.add(
+                "Generator",
+                f"Curtailment_{bus}",
+                bus=bus,
+                carrier="curtailment",
+                p_nom=max_shedding,
+                marginal_cost=load_shedding,
+            )
+    
     return n
 
 
