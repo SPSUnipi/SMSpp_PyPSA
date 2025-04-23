@@ -114,7 +114,7 @@ def build_microgrid_model(
         n.add(
             "Generator",  # Each RES technology is represented with a "Generator" component
             "pv",
-            carrier="AC",
+            carrier="pv",
             bus=f"Bus {bus_PV}",  # connect the generators to the microgrid bus
             p_max_pu=df_data["pv"],  # specify a maximum per-unit production for every time-step
             capital_cost=assumptions.loc["pv", "capital_cost"],  # specify the capital cost
@@ -126,7 +126,7 @@ def build_microgrid_model(
         n.add(
             "Generator",  # Each RES technology is represented with a "Generator" component
             "wind",
-            carrier="AC",
+            carrier="wind",
             bus=f"Bus {bus_wind}",  # connect the generators to the microgrid bus
             p_max_pu=df_data["wind"],  # specify a maximum per-unit production for every time-step
             capital_cost=assumptions.loc["wind", "capital_cost"],  # specify the capital cost
@@ -165,7 +165,7 @@ def build_microgrid_model(
             "Generator",
             "diesel",
             bus=f"Bus {bus_diesel}",
-            carrier="AC",
+            carrier="diesel",
             p_nom_extendable=True,
             capital_cost=assumptions.at["diesel", "capital_cost"],
             marginal_cost=assumptions.at["diesel", "OPEX_marginal"],
