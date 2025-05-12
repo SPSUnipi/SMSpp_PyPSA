@@ -168,3 +168,6 @@ notebooks/*.txt
 *.lp
 
 *pypsa2smspp*.nc4
+
+# vscode
+*.vscode/
