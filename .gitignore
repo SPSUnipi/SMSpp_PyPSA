@@ -168,6 +168,7 @@ notebooks/*.txt
 *.lp
 
 *pypsa2smspp*.nc4
+*investment_candidates.txt
 
 # vscode
 *.vscode/
