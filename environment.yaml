@@ -5,6 +5,7 @@ channels:
   - defaults
 dependencies:
   - python
+  - pip
   - numpy
   - pandas
   - matplotlib
@@ -18,3 +19,5 @@ dependencies:
   - jupyter
   - ipython
   - ipykernel
+  - pip:
+    - git+https://github.com/SPSUnipi/pypsa2smspp
