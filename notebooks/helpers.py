@@ -67,6 +67,8 @@ def build_microgrid_model(
 
     n_buses = max(all_buses) - min(all_buses) + 1
     df_data = build_data(bus_loads=buses_demand, hydro_factor=hydro_factor)
+    df_data = df_data.iloc[:n_snapshots]
+
     assumptions = build_assumptions()
 
     max_shedding = max(df_data[[f"demand {i}" for i in buses_demand]].sum(axis=1))
@@ -79,7 +81,7 @@ def build_microgrid_model(
     if n_snapshots is None:
         n_snapshots = df_data.shape[0]
     n.set_snapshots(
-        df_data.index[:n_snapshots],
+        df_data.index,
         default_snapshot_weightings=365*24/n_snapshots
     )
 
