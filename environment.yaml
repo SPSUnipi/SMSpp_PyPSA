@@ -1,4 +1,4 @@
-name: SMSpp_PyPSA_interface_test
+name: SMSpp_PyPSA_interface
 channels:
   - conda-forge
   - https://conda.anaconda.org/gurobi
