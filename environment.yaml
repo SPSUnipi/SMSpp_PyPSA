@@ -1,4 +1,4 @@
-name: SMSpp_PyPSA_interface
+name: SMSpp_PyPSA_interface_test
 channels:
   - conda-forge
   - https://conda.anaconda.org/gurobi
@@ -9,6 +9,7 @@ dependencies:
   - numpy
   - pandas
   - matplotlib
+  - xarray<=2025.01.2
 
   # for the exercises on pypsa
   - pypsa
