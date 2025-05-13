@@ -15,6 +15,7 @@ dependencies:
   - pypsa
   - glpk
   - gurobi  # not necessary but can ease the usability for some users
+  - highspy
 
   # for jupyter
   - jupyter
