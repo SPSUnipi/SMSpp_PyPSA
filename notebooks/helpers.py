@@ -156,6 +156,8 @@ def build_microgrid_model(
             p_nom_extendable=True,
             capital_cost=assumptions.at["hydro", "capital_cost"],
             cyclic_state_of_charge=False,
+            efficiency_dispatch=0.9,  # efficiency of the hydro generator
+            efficiency_store=0.9,  # efficiency of the hydro storage
             inflow=df_data["hydro"],
             max_hours=6,
             state_of_charge_initial=0.,
