@@ -1,8 +1,7 @@
 name: SMSpp_PyPSA_interface
 channels:
   - conda-forge
-  - https://conda.anaconda.org/gurobi
-  - defaults
+  - gurobi
 dependencies:
   - python
   - pip
@@ -10,6 +9,7 @@ dependencies:
   - pandas
   - matplotlib
   - xarray<=2025.01.2
+  - pypsa2smspp==0.0.2
 
   # for the exercises on pypsa
   - pypsa
@@ -21,5 +21,3 @@ dependencies:
   - jupyter
   - ipython
   - ipykernel
-  - pip:
-    - git+https://github.com/SPSUnipi/pypsa2smspp

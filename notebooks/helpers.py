@@ -86,7 +86,7 @@ def build_microgrid_model(
     )
 
     # Add buses to the microgrid
-    n.madd(
+    n.add(
         "Bus",
         [f"Bus {i}" for i in range(n_buses)],
         v_nom=0.4,
