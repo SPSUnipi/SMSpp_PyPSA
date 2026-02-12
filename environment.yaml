@@ -9,7 +9,7 @@ dependencies:
   - pandas
   - matplotlib
   - xarray<=2025.01.2
-  - pypsa2smspp==0.0.2
+  # - pypsa2smspp  # after release decomment
 
   # for the exercises on pypsa
   - pypsa
@@ -21,3 +21,5 @@ dependencies:
   - jupyter
   - ipython
   - ipykernel
+  - pip:
+    - git+https://github.com/SPSUnipi/pypsa2smspp  # use the latest version in the repository
